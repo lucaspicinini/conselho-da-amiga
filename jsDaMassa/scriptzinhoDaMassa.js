@@ -1,5 +1,6 @@
-// importa o módulo
+// importa os módulos
 import { requisicaoMarota } from "./apiDaMassa.js";
+import { apiDaTraducao } from "./apiQueTraduzPraAmiga.js";
 
 // vamo tacar o texto nesse h1 ae
 const falaPraEles = document.getElementById("textOutput")
@@ -10,13 +11,22 @@ const botaoConselho = document.getElementById("botaoConselho")
 botaoConselho.addEventListener("click", conselhoDaAmiga)
 
 function conselhoDaAmiga() {
+    // faz o mouse ficar em loading ao começar a requisição
+    document.body.style.cursor = "progress"
+    botaoConselho.style.cursor = "progress"
 
-    // pega o conselho retornado pelo método lá do outro arquivo
+    // pega o retorno do módulo que gera os conselhos no arquivo apiDaMassa.js
     return requisicaoMarota.pegarOTalDoConselho()
-    .then((oTalDoConselho) => {
+    // passa o conselho gerado para o módulo de tradução, definido no arquivo apiQueTraduzPraAmiga.js
+    .then((oTalDoConselho) => apiDaTraducao.pegarDadosTraducao(oTalDoConselho))
+    .then((conselhoTraduzido) => {
         // taca na tela e torce pra vida dos amigo melhorar
-        falaPraEles.innerHTML = oTalDoConselho
+        falaPraEles.innerHTML = conselhoTraduzido
+        // retorna o mouse ao estado normal após o retorno da requisição
+        document.body.style.cursor = "auto"
+        botaoConselho.style.cursor = "pointer"
     })
+    .catch((error) => console.error(error))
 }
 
 const botaoNumQuero = document.getElementById("botaoNumQuero")
