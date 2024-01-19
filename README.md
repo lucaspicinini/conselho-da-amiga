@@ -7,7 +7,7 @@ Uma brincadeira utilizando o exercício do programa de estudos para descontrair 
 
 ## Screenshots
 
-![](./img/screenshot.png)
+![](./img/screenshot01.png)
 
 ### Pratiquem as aulas de Git aqui!!!
 Sintam-se livres para treinar a colaboração com outros repositórios em um ambiente conhecido, com os alunos da sua turma e com o suporte da galera. Vocês podem adicionar outras funcionalidades e irem incrementando a brincadeira com outras páginas etc...
