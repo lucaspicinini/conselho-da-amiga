@@ -35,4 +35,5 @@ const botaoNumQuero = document.getElementById("botaoNumQuero")
 // parabenizando porque a pessoa é tão braba que não precisa de conselhos
 botaoNumQuero.addEventListener("click", () => {
     falaPraEles.innerHTML = `Muito Chad, <span class="container__texto-azul">não tem jeito</span>!`
+    responsiveVoice.speak(falaPraEles.innerText, "Brazilian Portuguese Female", {rate: 1.2})
 })
