@@ -6,6 +6,8 @@
 }
 
 body {
+    width: 100vw;
+    height: 100vh;
     background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
     display: flex;
     align-items: center;
@@ -27,8 +29,8 @@ body::before {
 
 .container {
     width: 80%;
-    height: 100vh;
     display: flex;
+    padding: 10px;
     align-items: center;
     justify-content: space-between;
     border-radius: 24px;
@@ -39,35 +41,16 @@ body::before {
     position: relative;
 }
 
-
-.container__conteudo {
-    height: 100vh;
-    padding: .0em .8em;
-    display: flex;
-    flex-direction: row;
-}
-
-.container__informacoes {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-.container__botao {
+.btn {
     border-radius: 16px;
     background: #1875E8;
     padding: 16px 24px;
-    width: 100%;
+    width: 250px;
     font-size: 24px;
     font-weight: 700;
     border: none;
     margin-top: 2rem;
 }
-
-/* .container__texto {
-    margin: 16px 0 16px 0;
-} */
 
 .container__texto-azul {
     color: #1875E8;
@@ -86,9 +69,14 @@ body::before {
     font-family: 'Inter', sans-serif;
 }
 
-.container__botoes {
+.message {
+    text-align: center;
+}
+
+.buttons {
     display: flex;
     gap: 2em;
+    justify-content: center;
 }
 
 h1 {
@@ -111,30 +99,52 @@ button:disabled {
     background-color: gray;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (min-width: 1095px) and (max-width: 1360px) {
+    .imagem {
+        width: 30vw;
+    }
 
     h1 {
-        font-size: 50px;
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 550px) and (max-width: 1095px) {
+    .container {
+        flex-direction: column;
     }
 
-    .container__botao {
+    .imagem {
+        margin-top: 20px;
+        width: 20vw;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .btn {
+        width: 30vw;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .imagem {
+        margin-top: 20px;
+        width: 20vw;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .btn {
+        width: 30vw;
         font-size: 16px;
-    }
-
-
-    .texto__paragrafo {
-        font-size: 24px;
-    }
-
-    .container__imagem-pessoa {
-        display: none;
-    }
-
-    .container__conteudo {
-        position: inherit;
-    }
-
-    .container__informacoes {
-        padding: 1rem
     }
 }
