@@ -22,6 +22,8 @@ function conselhoDaAmiga() {
     .then((conselhoTraduzido) => {
         // taca na tela e torce pra vida dos amigo melhorar
         falaPraEles.innerHTML = conselhoTraduzido
+        // da voz a nossa amiga, como visto nas aulas
+        responsiveVoice.speak(conselhoTraduzido, "Brazilian Portuguese Female", {rate: 1.2})
         // retorna o mouse ao estado normal após o retorno da requisição
         document.body.style.cursor = "auto"
         botaoConselho.style.cursor = "pointer"
