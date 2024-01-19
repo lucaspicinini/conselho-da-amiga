@@ -14,21 +14,18 @@
 </head>
 
 <body>
-
-    <div class="container">
-        <div class="container__conteudo">
-            <div class="container__informacoes">
-                <div class="container__texto">
-                    <h1 id="textOutput">Se quiser um conselho é só clicar no botão, <span class="container__texto-azul">só não repare meu sotaque de gringa</span>!</h1>
-                </div>
-                <div class="chute container__botoes">
-                    <button id="botaoConselho" class="container__botao">Tô precisando.</button>
-                    <button id="botaoNumQuero" class="container__botao">Num quero!</button>
-                </div>
-            </div>
-            <img src="./img/ia.png" alt="Uma pessoa olhando para a esquerda" class="container__imagem-pessoa" />
+    <main class="container">
+        <div class="informacao">
+            <section class="message">
+                <h1 id="textOutput">Se quiser um conselho é só clicar no botão, <span class="container__texto-azul">só não repare meu sotaque de gringa</span>!</h1>
+            </section>
+            <section class="chute buttons">
+                <button id="botaoConselho" class="btn">Tô precisando.</button>
+                <button id="botaoNumQuero" class="btn">Num quero!</button>
+            </section>
         </div>
-    </div>
+        <img src="./img/ia.png" alt="Uma pessoa olhando para a esquerda" class="imagem" />
+    </main>
 
     <script type="module" src="./jsDaMassa/scriptzinhoDaMassa.js" defer></script>
 </body>
